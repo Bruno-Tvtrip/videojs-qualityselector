@@ -1,6 +1,6 @@
 /**
  * videojs-qualityselector
- * @version 0.0.5
+ * @version 0.0.6
  * @copyright 2018 Emmanuel Alves <manel.pb@gmail.com>
  * @license MIT
  */
@@ -214,7 +214,7 @@ var QualitySelector = (function () {
       this.player.addClass('vjs-qualityselector');
 
       if (this.defaultFormat) {
-        this.setPlayerSource();
+        this.setPlayerSource(this.defaultFormat);
       }
     }
   }]);
@@ -238,7 +238,7 @@ var registerPlugin = _videoJs2['default'].registerPlugin || _videoJs2['default']
 registerPlugin('qualityselector', qualityselector);
 
 // Include the version number.
-qualityselector.VERSION = '0.0.5';
+qualityselector.VERSION = '0.0.6';
 
 exports['default'] = qualityselector;
 module.exports = exports['default'];
