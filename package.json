@@ -86,7 +86,7 @@
     "budo": "^8.0.4",
     "chg": "^0.3.2",
     "glob": "^6.0.3",
-    "global": "^4.3.0",
+    "global": "^4.3.2",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
     "karma-detect-browsers": "^2.0.2",
