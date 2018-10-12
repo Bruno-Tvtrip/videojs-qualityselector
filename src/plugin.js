@@ -100,6 +100,7 @@ class QualitySelector {
     let containerElement = document.createElement('div');
 
     containerElement.className = 'vjs-quality-container';
+    containerElement.id = 'vjsQualitySelector';
 
     let buttonElement = document.createElement('button');
 
@@ -161,6 +162,16 @@ class QualitySelector {
       this.setPlayerSource(this.defaultFormat);
     }
   }
+
+  /**
+   * Function to delete previous instance to avoid duplicate menu on the control bar
+   */
+  deleteExistingInstance() {
+    if (this.player.hasClass('vjs-qualityselector')) {
+      var element = document.getElementById('vjsQualitySelector');
+      element.parentNode.removeChild(element);
+    }
+  }
 }
 
 /**
@@ -175,10 +186,10 @@ class QualitySelector {
  * @param    {Object} [options={}]
  *           An object of options left to the plugin author to define.
  */
-const qualityselector = function(options) {
+const qualityselector = function (options) {
   this.ready(() => {
     let qualityControl = new QualitySelector(this);
-
+    qualityControl.deleteExistingInstance();
     qualityControl.onPlayerReady(videojs.mergeOptions(qualityControl.defaults, options));
   });
 };
